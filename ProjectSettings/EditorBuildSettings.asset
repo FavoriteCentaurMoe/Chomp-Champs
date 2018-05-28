@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Nikhil_Scenes/MainMenu.unity
+    guid: 2695da401d40cd44fa3d35b6fd579184
+  - enabled: 1
+    path: Assets/Scenes/Nikhil_Scenes/Test_1.unity
+    guid: c0498834794bbc342a336360699584f2
