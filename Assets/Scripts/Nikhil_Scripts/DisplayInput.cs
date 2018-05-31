@@ -27,7 +27,10 @@ public class DisplayInput : MonoBehaviour {
         if(Input.touchCount > 0)
         {
             Touch myTouch = Input.GetTouch(0);
-            touchPosition.text = "Touch 1 Positon : " +myTouch.position;
+            if (myTouch.position.x > touchPosition.rectTransform.rect.xMin && myTouch.position.x < touchPosition.rectTransform.rect.xMax
+                && myTouch.position.y > touchPosition.rectTransform.rect.yMin && myTouch.position.y < touchPosition.rectTransform.rect.yMin) {
+                    touchPosition.text = "Touch 1 Positon : " +myTouch.position;
+                }
         }
 
 
