@@ -5,30 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public int playerNum;
 
-    //[SerializeField]
-    //private bool readyForInput = true;
-    //private bool runChomp = false;
-    //[SerializeField]
-    //private bool chompState = false;
-    //[SerializeField]
-    //private bool finishChomp = false;
-    //[SerializeField]
-    //private bool atStartRotation = false;
-    //private Quaternion mouthOpen;
-    //private Quaternion mouthClosed;
-    //private Quaternion originalRotation;
+    [SerializeField]
+    private bool runChompAnim;
+    [SerializeField]
+    private int chompAnimState = 0; // 0 = not playing, 1 = Head rotating up. 2 = Head rotating down, 3 = head rotating to 0
+    private bool nextXRotation; // If chompAnimState = 1, this = -20. If cAS == 2, this = 10. If cAS == 0, this = 0.
 
     void Update() {
-        //if (runChomp) {
-        //    mouthOpen = Quaternion.Euler(-20f, transform.rotation.eulerAngles.y, 0f);
-        //    mouthClosed = Quaternion.Euler(10f, transform.rotation.eulerAngles.y, 0f);
-        //    originalRotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0f);
-        //    StartCoroutine(chompAnimation());
-        //    Debug.Log("Coroutine called.");
-        //}
+        if (runChompAnim) {
+            StartCoroutine(chompAnimation());
+        }
     }
 
     public void processTouch(Vector3 touchPoint) {
+        if (!runChompAnim)
+        {
             transform.LookAt(touchPoint);
             // Is this the best to clamp the Y-axis rotation? Prolly not. I blame Quaternions.
             if (playerNum == 1)
@@ -55,40 +46,40 @@ public class PlayerController : MonoBehaviour {
                     transform.rotation = Quaternion.Euler(0f, yRot, 0f);
                 }
             }
-        
-        //readyForInput = false;
-        //runChomp = true;
+            runChompAnim = true;
+        }
     }
 
-    //IEnumerator chompAnimation() {
-    //    if (!chompState && !finishChomp)
-    //        transform.rotation = Quaternion.Slerp(transform.rotation, mouthOpen, .8f);
-    //    else if (chompState && !finishChomp)
-    //        transform.rotation = Quaternion.Slerp(transform.rotation, mouthClosed, .8f);
-    //    else if (finishChomp)
-    //        transform.rotation = Quaternion.Slerp(transform.rotation, originalRotation, .8f);
+    IEnumerator chompAnimation() {
+        if (chompAnimState == 0 && transform.rotation.eulerAngles.x > -20)
+        {
+            //Debug.Log("Rotating Up.");
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-21f, transform.rotation.eulerAngles.y, 0f), .5f);
+            if (transform.rotation.eulerAngles.x <= -20 + 360)
+            {
+                chompAnimState = 1;
+            }
+        }
 
-    //    if (!chompState && transform.rotation == mouthOpen) {
-    //        chompState = true;
-    //        Debug.Log("Mouth Fully Opened.");
-    //    }
-    //    if (chompState && transform.rotation == mouthClosed) {
-    //        Debug.Log("Mouth Fully Closed.");
-    //        finishChomp = true;
-    //    }
-    //    if (finishChomp && transform.rotation == originalRotation) {
-    //        Debug.Log("Back to Normal.");
-    //        atStartRotation = true;
-    //    }
-    //    if (atStartRotation) {
-    //        chompState = false;
-    //        finishChomp = false;
-    //        readyForInput = true;
-    //        atStartRotation = false;
-    //        runChomp = false;
-    //        Debug.Log("Animiation Complete.");
-    //    }
-
-    //    yield return null;
-    //}
+        if (chompAnimState == 1 && (transform.rotation.eulerAngles.x > 339.5f || transform.rotation.eulerAngles.x < 10.5f))
+        {
+            //Debug.Log("Rotating Down.");
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(10, transform.rotation.eulerAngles.y, 0f), .7f);
+            if (transform.rotation.eulerAngles.x > 9.5f && transform.rotation.eulerAngles.x < 10.5f)
+            {
+                chompAnimState = 2;
+            }
+        }
+        if (chompAnimState == 2 && transform.rotation.eulerAngles.x != 0)
+        {
+            //Debug.Log("Rotating Back Up.");
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f), .9f);
+            if (transform.rotation.eulerAngles.x < 0.05f)
+            {
+                chompAnimState = 0;
+                runChompAnim = false;
+            }
+        }
+        yield return null;
+    }
 }
