@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour {
 
     public AudioClip[] TapSounds;
     public int NOfSounds;
-
     public AudioSource AS;
     System.Random R = new System.Random();
 
@@ -37,15 +36,9 @@ public class GameManager : MonoBehaviour {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
-                
-
                 playTap(R.Next(0, NOfSounds));
-                
-            
+              
             if (Physics.Raycast(ray, out hit)) {
-                //Debug.Log("You hit a thing! Here's what it was: " + hit.transform.name);
-                //Debug.Log("Here is where you hit the thing: " + hit.point);
-
                 Vector3 lookPoint = new Vector3(hit.point.x, 0, hit.point.z);
                 if (hit.point.z < 0) {
                     p1.processTouch(lookPoint);
