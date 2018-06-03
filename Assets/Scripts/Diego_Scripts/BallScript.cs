@@ -27,23 +27,10 @@ public class BallScript : MonoBehaviour {
     void OnCollisionEnter(Collision coll) {
         if (coll.transform.tag == "WallX")
         {
-            //Debug.Log("Hit a wall on the X Axis.");
-            //ContactPoint contact = coll.contacts[0];
-
-            //Debug.DrawRay(contact.point, contact.normal, Color.white, 2f);
-            //Debug.Log(Quaternion.Euler(contact.normal).eulerAngles);
-            //Debug.Log(Mathf.Atan2(transform.rotation.eulerAngles.y, Quaternion.Euler(contact.normal).eulerAngles.x) * Mathf.Rad2Deg);
-
 
         }
         else if (coll.transform.tag == "WallZ")
         {
-            //Debug.Log("Hit a wall on the Z Axis.");
-            //ContactPoint contact = coll.contacts[0];          
-
-            //Debug.DrawRay(contact.point, contact.normal, Color.white, 2f);
-            //Debug.Log(Quaternion.Euler(contact.normal).eulerAngles);
-            //Debug.Log(Mathf.Atan2(transform.rotation.eulerAngles.y, Quaternion.Euler(contact.normal).eulerAngles.z) * Mathf.Rad2Deg);
 
         }
     }

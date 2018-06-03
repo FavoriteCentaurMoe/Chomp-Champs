@@ -8,9 +8,7 @@ public class playerMouth : MonoBehaviour {
     //This script will go on HippoHead and will handle the detecting of balls and such things
 
     public bool eatingAllowed;
-
     public Text scoreText;
-
     public int score;
 
 	// Use this for initialization
@@ -34,22 +32,21 @@ public class playerMouth : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Ball")
         {
-            Debug.Log("Ball all up in my face");
-
+            //Debug.Log("Ball all up in my face");
             if (eatingAllowed)
             {
                 Eating(collision.gameObject);
             }
             else
             {
-                Debug.Log("Sorry I can't eat I'm fasting right now");
+               // Debug.Log("Sorry I can't eat I'm fasting right now");
             }
         }
     }
 
     private void Eating(GameObject food)
     {
-        Debug.Log("Yum, a snack has been had");
+     //   Debug.Log("Yum, a snack has been had");
         Destroy(food);
         score++;
         scoreText.text = score.ToString();

@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour {
         // If we are starting in the test scene, get the PlayerControllers.
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1) {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject p in players) { Debug.Log("Player: " + p.name); }
             p1 = players[0].GetComponent<PlayerController>();
             p2 = players[1].GetComponent<PlayerController>();
         }
