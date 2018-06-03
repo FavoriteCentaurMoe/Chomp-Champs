@@ -11,3 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nikhil_Scenes/Test_1.unity
     guid: c0498834794bbc342a336360699584f2
+  - enabled: 0
+    path: Assets/Scenes/David_Scenes/David_test_scene_2.unity
+    guid: 2725b092f6fc07f498b93c281a34d0b2
+  m_configObjects: {}
