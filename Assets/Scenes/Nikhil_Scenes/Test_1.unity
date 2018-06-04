@@ -2326,6 +2326,11 @@ Prefab:
       propertyPath: Chomp
       value: 
       objectReference: {fileID: 49351934}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: EffectTime
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
   m_IsPrefabParent: 0
@@ -2779,6 +2784,11 @@ Prefab:
       propertyPath: Chomp
       value: 
       objectReference: {fileID: 2116902006}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: EffectTime
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
   m_IsPrefabParent: 0

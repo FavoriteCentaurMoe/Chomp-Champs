@@ -20,6 +20,7 @@ public class playerMouth : MonoBehaviour {
     //Effect
     public GameObject Chomp;
     public float EffectTime=0.15f;
+    private bool ScalingActive;
 
     void playBite(int SoundNumber)
     {
@@ -30,7 +31,10 @@ public class playerMouth : MonoBehaviour {
     IEnumerator ChompEffect()
     {
         Chomp.SetActive(true);
+        Chomp.transform.localScale = Vector3.zero;
+        ScalingActive = true;
         yield return new WaitForSeconds(EffectTime);
+        ScalingActive = false;
         Chomp.SetActive(false);
     }
 
@@ -82,6 +86,10 @@ public class playerMouth : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+		if(ScalingActive)
+        {
+            Chomp.transform.localScale = Vector3.Lerp(Chomp.transform.localScale, new Vector3(1,.01f, 1), 0.2f);
+        }
+        
 	}
 }
