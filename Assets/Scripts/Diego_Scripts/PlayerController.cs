@@ -9,7 +9,11 @@ public class PlayerController : MonoBehaviour {
     private int chompAnimState = 0; // 0 = not playing, 1 = Head rotating up. 2 = Head rotating down, 3 = head rotating to 0
     private bool nextXRotation; // If chompAnimState = 1, this = -20. If cAS == 2, this = 10. If cAS == 0, this = 0.
 
+    
+
     public playerMouth hungryMouth; //A reference to playerMouth. We will tell the mouth when it is ok to eat 
+
+    
 
     public void Start()
     {

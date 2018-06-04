@@ -11,12 +11,27 @@ public class playerMouth : MonoBehaviour {
     public Text scoreText;
     public int score;
 
-	// Use this for initialization
-	void Start () {
+    // Use these to play Bite sounds
+    public AudioSource AS;
+    public AudioClip[] BiteSounds;
+    public int NOfBiteSounds;
+    System.Random R = new System.Random();
+
+    void playBite(int SoundNumber)
+    {
+        AS.clip = BiteSounds[SoundNumber];
+        AS.Play();
+    }
+
+
+    // Use this for initialization
+    void Start () {
         eatingAllowed = false;
         score = 0;
         scoreText.text = score.ToString();
 	}
+
+    
 
     public void allowEating()
     {
@@ -46,7 +61,8 @@ public class playerMouth : MonoBehaviour {
 
     private void Eating(GameObject food)
     {
-     //   Debug.Log("Yum, a snack has been had");
+    //   Debug.Log("Yum, a snack has been had");
+        playBite(R.Next(0, NOfBiteSounds));
         Destroy(food);
         score++;
         scoreText.text = score.ToString();

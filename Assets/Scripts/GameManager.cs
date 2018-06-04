@@ -8,24 +8,18 @@ public class GameManager : MonoBehaviour {
     private PlayerController p1;
     private PlayerController p2;
 
+    //Use these to play tapping sounds
     public AudioClip[] TapSounds;
-    public AudioClip[] BiteSounds;
     public int NOfTapSounds;
-    public int NOfBiteSounds;
-
-    public AudioSource AS;
     System.Random R = new System.Random();
-
+    public AudioSource AS;
+    
     void playTap(int SoundNumber)
     {
         AS.clip = TapSounds[SoundNumber];
         AS.Play();
     }
-    void playBite(int SoundNumber)
-    {
-        AS.clip = BiteSounds[SoundNumber];
-        AS.Play();
-    }
+    
 
     void Start() {
         // If we are starting in the test scene, get the PlayerControllers.
@@ -48,7 +42,6 @@ public class GameManager : MonoBehaviour {
               
             if (Physics.Raycast(ray, out hit)) {
                 Vector3 lookPoint = new Vector3(hit.point.x, 0, hit.point.z);
-                    playBite(R.Next(0, NOfBiteSounds));
                 if (hit.point.z < 0) {
                     p1.processTouch(lookPoint);
                 }

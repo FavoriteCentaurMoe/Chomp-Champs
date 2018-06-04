@@ -466,6 +466,91 @@ Transform:
   m_Father: {fileID: 91198570}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &107644036 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1770799748956108, guid: f2571dd70a7d62848851fd8a7321918e,
+    type: 2}
+  m_PrefabInternal: {fileID: 632148947}
+--- !u!82 &107644042
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107644036}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &190018076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2147,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4884214799047484, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2113,6 +2208,106 @@ Prefab:
       propertyPath: playerNum
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: AS
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: NOfBiteSounds
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 66f7a490e004a6246a46aacd74d8fea6, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38717bc784f036048be9226a3251ec38, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: AS
+      value: 
+      objectReference: {fileID: 107644042}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: NOfBiteSounds
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 66f7a490e004a6246a46aacd74d8fea6, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38717bc784f036048be9226a3251ec38, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
   m_IsPrefabParent: 0
@@ -2392,6 +2587,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4884214799047484, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2443,6 +2648,106 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b9e6a0e8e5bc4f40b28fb19a0ff175d, type: 2}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: AS
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 66f7a490e004a6246a46aacd74d8fea6, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38717bc784f036048be9226a3251ec38, type: 3}
+    - target: {fileID: 114752111860250280, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: NOfBiteSounds
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: NOfBiteSounds
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: AS
+      value: 
+      objectReference: {fileID: 1099540725}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 66f7a490e004a6246a46aacd74d8fea6, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
+    - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
+        type: 2}
+      propertyPath: BiteSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38717bc784f036048be9226a3251ec38, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
   m_IsPrefabParent: 0
@@ -3157,6 +3462,91 @@ Transform:
   m_Father: {fileID: 91198570}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1099540719 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1770799748956108, guid: f2571dd70a7d62848851fd8a7321918e,
+    type: 2}
+  m_PrefabInternal: {fileID: 788830684}
+--- !u!82 &1099540725
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099540719}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1109655462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,17 +5997,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 86fb7b94de331554f8e7fb5d1ba322c9, type: 3}
   - {fileID: 8300000, guid: 58543a2e106a8d44ab9d4a0c541cc545, type: 3}
   - {fileID: 8300000, guid: 4a79d8fd8aeffba4a984ba2f2c3d5dd9, type: 3}
-  BiteSounds:
-  - {fileID: 8300000, guid: f8d7cb4e227080f499f0769bf44bde3c, type: 3}
-  - {fileID: 8300000, guid: 52cc42270b233774ba447d7634c892b8, type: 3}
-  - {fileID: 8300000, guid: 827ab51b5bbc3144b951150218b1f872, type: 3}
-  - {fileID: 8300000, guid: 5631c5cd0d563f24f9fc928f43df7a6a, type: 3}
-  - {fileID: 8300000, guid: b969644fb2acec6458d45fc153dbff9c, type: 3}
-  - {fileID: 8300000, guid: 8de0b5fe37fe4224fadf6779100a9e81, type: 3}
-  - {fileID: 8300000, guid: 5c4489ad36666114b82b25127a138a33, type: 3}
-  - {fileID: 8300000, guid: 6e4390a887ecf0b4dbf3a8cffc77520b, type: 3}
   NOfTapSounds: 6
-  NOfBiteSounds: 8
   AS: {fileID: 1898167750}
 --- !u!4 &1898167749
 Transform:
