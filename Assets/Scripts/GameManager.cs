@@ -9,13 +9,21 @@ public class GameManager : MonoBehaviour {
     private PlayerController p2;
 
     public AudioClip[] TapSounds;
-    public int NOfSounds;
+    public AudioClip[] BiteSounds;
+    public int NOfTapSounds;
+    public int NOfBiteSounds;
+
     public AudioSource AS;
     System.Random R = new System.Random();
 
     void playTap(int SoundNumber)
     {
         AS.clip = TapSounds[SoundNumber];
+        AS.Play();
+    }
+    void playBite(int SoundNumber)
+    {
+        AS.clip = BiteSounds[SoundNumber];
         AS.Play();
     }
 
@@ -36,10 +44,11 @@ public class GameManager : MonoBehaviour {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
-                playTap(R.Next(0, NOfSounds));
+                playTap(R.Next(0, NOfTapSounds));
               
             if (Physics.Raycast(ray, out hit)) {
                 Vector3 lookPoint = new Vector3(hit.point.x, 0, hit.point.z);
+                    playBite(R.Next(0, NOfBiteSounds));
                 if (hit.point.z < 0) {
                     p1.processTouch(lookPoint);
                 }

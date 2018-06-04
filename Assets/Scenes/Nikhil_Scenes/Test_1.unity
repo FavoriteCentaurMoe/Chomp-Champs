@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5607,7 +5607,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 86fb7b94de331554f8e7fb5d1ba322c9, type: 3}
   - {fileID: 8300000, guid: 58543a2e106a8d44ab9d4a0c541cc545, type: 3}
   - {fileID: 8300000, guid: 4a79d8fd8aeffba4a984ba2f2c3d5dd9, type: 3}
-  NOfSounds: 6
+  BiteSounds:
+  - {fileID: 8300000, guid: f8d7cb4e227080f499f0769bf44bde3c, type: 3}
+  - {fileID: 8300000, guid: 52cc42270b233774ba447d7634c892b8, type: 3}
+  - {fileID: 8300000, guid: 827ab51b5bbc3144b951150218b1f872, type: 3}
+  - {fileID: 8300000, guid: 5631c5cd0d563f24f9fc928f43df7a6a, type: 3}
+  - {fileID: 8300000, guid: b969644fb2acec6458d45fc153dbff9c, type: 3}
+  - {fileID: 8300000, guid: 8de0b5fe37fe4224fadf6779100a9e81, type: 3}
+  - {fileID: 8300000, guid: 5c4489ad36666114b82b25127a138a33, type: 3}
+  - {fileID: 8300000, guid: 6e4390a887ecf0b4dbf3a8cffc77520b, type: 3}
+  NOfTapSounds: 6
+  NOfBiteSounds: 8
   AS: {fileID: 1898167750}
 --- !u!4 &1898167749
 Transform:
