@@ -2155,7 +2155,7 @@ Prefab:
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4884214799047484, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2266,43 +2266,43 @@ Prefab:
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: NOfBiteSounds
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 66f7a490e004a6246a46aacd74d8fea6, type: 3}
+      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
+      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
+      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
+      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
+      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
+      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[6]
       value: 
-      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
+      objectReference: {fileID: 8300000, guid: 38717bc784f036048be9226a3251ec38, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[7]
@@ -2595,7 +2595,7 @@ Prefab:
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4884214799047484, guid: f2571dd70a7d62848851fd8a7321918e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2701,7 +2701,7 @@ Prefab:
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: NOfBiteSounds
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
@@ -2712,37 +2712,37 @@ Prefab:
         type: 2}
       propertyPath: BiteSounds.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 66f7a490e004a6246a46aacd74d8fea6, type: 3}
+      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 25f5e0b6811e05f41a44238380709008, type: 3}
+      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 9dac7178073ede348b609d1a0e95a31f, type: 3}
+      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: f6da6ee779c23a046896ceab6760d3c3, type: 3}
+      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: c20f4086779b7f740af791342ee30f30, type: 3}
+      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: dc5eb25947283f94680b339035efd29b, type: 3}
+      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[6]
       value: 
-      objectReference: {fileID: 8300000, guid: 468d61c803a9d2649b41d2511c36f9f7, type: 3}
+      objectReference: {fileID: 8300000, guid: 38717bc784f036048be9226a3251ec38, type: 3}
     - target: {fileID: 114764821362036038, guid: f2571dd70a7d62848851fd8a7321918e,
         type: 2}
       propertyPath: BiteSounds.Array.data[7]
