@@ -17,12 +17,22 @@ public class playerMouth : MonoBehaviour {
     public int NOfBiteSounds;
     System.Random R = new System.Random();
 
+    //Effect
+    public GameObject Chomp;
+    public float EffectTime=0.15f;
+
     void playBite(int SoundNumber)
     {
         AS.clip = BiteSounds[SoundNumber];
         AS.Play();
     }
 
+    IEnumerator ChompEffect()
+    {
+        Chomp.SetActive(true);
+        yield return new WaitForSeconds(EffectTime);
+        Chomp.SetActive(false);
+    }
 
     // Use this for initialization
     void Start () {
@@ -63,6 +73,7 @@ public class playerMouth : MonoBehaviour {
     {
     //   Debug.Log("Yum, a snack has been had");
         playBite(R.Next(0, NOfBiteSounds));
+        StartCoroutine(ChompEffect());
         Destroy(food);
         score++;
         scoreText.text = score.ToString();
