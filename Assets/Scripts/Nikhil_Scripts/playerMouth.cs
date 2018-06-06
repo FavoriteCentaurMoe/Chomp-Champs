@@ -10,6 +10,11 @@ public class playerMouth : MonoBehaviour {
     public bool eatingAllowed;
     public Text scoreText;
     public int score;
+    public GameManager gm;
+    public string player_name;
+
+
+    
 
     // Use these to play Bite sounds
     public AudioSource AS;
@@ -21,6 +26,9 @@ public class playerMouth : MonoBehaviour {
     public GameObject Chomp;
     public float EffectTime=0.15f;
     private bool ScalingActive;
+
+
+    public bool playing;
 
     void playBite(int SoundNumber)
     {
@@ -36,6 +44,7 @@ public class playerMouth : MonoBehaviour {
         yield return new WaitForSeconds(EffectTime);
         ScalingActive = false;
         Chomp.SetActive(false);
+        
     }
 
     // Use this for initialization
@@ -43,7 +52,17 @@ public class playerMouth : MonoBehaviour {
         eatingAllowed = false;
         score = 0;
         scoreText.text = score.ToString();
-	}
+        if(gm == null)
+        {
+            gm = FindObjectOfType<GameManager>();
+        }
+        //gm = FindObjectOfType<GameManager>();
+        //gm.ballEaten(player_name);
+        //gm.checkScore();
+       
+        playing = true;
+
+    }
 
     
 
@@ -61,6 +80,7 @@ public class playerMouth : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Ball")
         {
+            //gm.checkScore();
             //Debug.Log("Ball all up in my face");
             if (eatingAllowed)
             {
@@ -75,17 +95,32 @@ public class playerMouth : MonoBehaviour {
 
     private void Eating(GameObject food)
     {
-    //   Debug.Log("Yum, a snack has been had");
+        //   Debug.Log("Yum, a snack has been had");
+        
         playBite(R.Next(0, NOfBiteSounds));
         StartCoroutine(ChompEffect());
+        food.GetComponent<BallScript>().killYourself(player_name);
         Destroy(food);
         score++;
+        
+        
         scoreText.text = score.ToString();
+
+        
+        //gm.ballEaten(name);
+    }   
+
+    public void displayWinner(string winner)
+    {
+        Debug.Log(winner + " WINS");
+        playing = false;
+        scoreText.text = winner + " WINS";
     }
 
 
     // Update is called once per frame
     void Update () {
+        //gm.ballEaten(name);
 		if(ScalingActive)
         {
             Chomp.transform.localScale = Vector3.Lerp(Chomp.transform.localScale, new Vector3(1,.01f, 1), 0.2f);
