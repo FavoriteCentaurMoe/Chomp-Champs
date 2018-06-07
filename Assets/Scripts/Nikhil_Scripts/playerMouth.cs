@@ -84,7 +84,7 @@ public class playerMouth : MonoBehaviour {
     {
         playBite(R.Next(0, NOfBiteSounds));
         StartCoroutine(ChompEffect());
-        food.GetComponent<BallScript>().killYourself(player_name);
+        //food.GetComponent<BallScript>().killYourself(player_name);
         Destroy(food);
         score++;
         scoreText.text = score.ToString();
@@ -105,6 +105,6 @@ public class playerMouth : MonoBehaviour {
         {
             Chomp.transform.localScale = Vector3.Lerp(Chomp.transform.localScale, new Vector3(1,.01f, 1), 0.2f);
         }
-        
+
 	}
 }

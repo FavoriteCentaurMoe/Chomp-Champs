@@ -10,6 +10,7 @@ TagManager:
   - winText
   - playerHead
   - Background
+  - test
   layers:
   - Default
   - TransparentFX

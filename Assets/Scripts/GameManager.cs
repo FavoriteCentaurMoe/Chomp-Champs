@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour {
     public Material p1Material;
     public Material p2Material;
 
+    public Text testText;
+
     void playTap(int SoundNumber)
     {
         if (canPlaySounds)
@@ -111,6 +113,10 @@ public class GameManager : MonoBehaviour {
             if (scene.buildIndex == 0)
             {
                 canPlaySounds = false;
+                count = 0;
+
+                p1Score = 0;
+                p2Score = 0;
             }
             else if (scene.buildIndex == 1)
             {
@@ -132,6 +138,10 @@ public class GameManager : MonoBehaviour {
 
                 p1Score = 0;
                 p2Score = 0;
+
+                //DELETE
+                testText = GameObject.FindGameObjectWithTag("test").GetComponent<Text>();
+
             }
             else if (scene.buildIndex == 2)
             {
@@ -143,20 +153,22 @@ public class GameManager : MonoBehaviour {
 
     public void ballEaten(string playerName)
     {
-        count++;
         if(playerName == "p1")
         {
             p1Score++;
         }
-        else
+        else if (playerName == "p2")
         {
             p2Score++;   
         }
+        count++;
     }
 
     // Update is called once per frame
     void Update() {
-
+        if (testText != null) {
+            testText.text = count.ToString();
+        }
         if(count >= 25)
         {
             //Debug.Log("Just a check");
@@ -168,7 +180,6 @@ public class GameManager : MonoBehaviour {
             }
 
         }
-
         // Process Touch Inputs.
         for (int i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
