@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
     public Material p1Material;
     public Material p2Material;
 
-    public Text testText;
+    //private Text testText;
 
     void playTap(int SoundNumber)
     {
@@ -139,9 +139,7 @@ public class GameManager : MonoBehaviour {
                 p1Score = 0;
                 p2Score = 0;
 
-                //DELETE
-                testText = GameObject.FindGameObjectWithTag("test").GetComponent<Text>();
-
+                //testText = GameObject.FindGameObjectWithTag("test").GetComponent<Text>();
             }
             else if (scene.buildIndex == 2)
             {
@@ -166,9 +164,9 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (testText != null) {
-            testText.text = count.ToString();
-        }
+        //if (testText != null) {
+        //    testText.text = count.ToString();
+        //}
         if(count >= 25)
         {
             //Debug.Log("Just a check");
