@@ -11,17 +11,9 @@ public class GameManager : MonoBehaviour {
     private PlayerController p1;
     [SerializeField]
     private PlayerController p2;
-
-//    private int p1Score=0;
-   // private int p2Score=0;
-
-  //  public Text p1Text;
-  //  public Text p2Text;
-
-    int count;
-
     public playerMouth p1Mouth; //needed for the end of game
     public playerMouth p2Mouth;
+
     //Use these to play tapping sounds
     public AudioClip[] TapSounds;
     public int NOfTapSounds;
@@ -29,22 +21,21 @@ public class GameManager : MonoBehaviour {
     public AudioSource AS;
     private bool canPlaySounds;
 
-
     string winner = "TIE";
-
-
     public GameObject p1WinnerText;
     public GameObject p2WinnerText;
 
-    public static int p1Score = 0;
-    public static int p2Score = 0;
-
-    public bool gameOngoing = true;
-
-
-    public int ballCount = 40;
+    public int p1Score = 0;
+    public int p2Score = 0;
 
     public GameObject[] balls;
+    public bool gameOngoing = true;
+    public int count;
+    public int ballCount = 40;
+
+    private GameObject background;
+    public Material p1Material;
+    public Material p2Material;
 
     void playTap(int SoundNumber)
     {
@@ -54,9 +45,6 @@ public class GameManager : MonoBehaviour {
             AS.Play();
         }
     }
-
-
-
 
     public IEnumerator endIt()
     {
@@ -77,32 +65,27 @@ public class GameManager : MonoBehaviour {
 
         if(winTexts.Length == 0)
         {
-            Debug.Log("YOU HAVE NOT WON YET WORK HARDER");
+            //Debug.Log("YOU HAVE NOT WON YET WORK HARDER");
         }
         else
         {
-            Debug.Log("Oh my....you won");
-
-            string winn;
-
+            //Debug.Log("Oh my....you won");
             if(p1Score > p2Score)
             {
-                winn = "Player 1 Wins!";
+                background.GetComponent<Renderer>().material = p1Material;
             }
             else if (p2Score > p1Score)
             {
-                winn = "Player 2 Wins!";
-            }
-            else
-            {
-                winn = "Somehow, a tie?";
+                background.GetComponent<Renderer>().material = p2Material;
             }
 
-            for(int i = 0; i < winTexts.Length; i++)
+            for (int i = 0; i < winTexts.Length; i++)
             {
-                winTexts[i].GetComponent<Text>().text = winn;
+                if (p1Score > p2Score)
+                    winTexts[i].GetComponent<Text>().text = "Player 1 Wins!";
+                else if (p2Score > p1Score)
+                    winTexts[i].GetComponent<Text>().text = "Player 2 Wins!";
             }
-
             StartCoroutine(endIt());
         }
     }
@@ -110,37 +93,17 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         // If we run into other GameManagers, DESTORY THEM!
-
-        
         if (instance == null)
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
 
-
-        //p1Score = 0;
-        //p2Score = 0;
-
-        balls = GameObject.FindGameObjectsWithTag("Ball");
-        ballCount = balls.Length;   //This is how we know how many balls are in the scene when the game starts 
-        count = 0;
-
-        Debug.Log("Hey kid, there are " + ballCount + " balls just flying around");
-
         isThisWinScreen();
 
-        //// [DEPRECATED CODE]
-        //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1) {
-        //    GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        //    p1 = players[0].GetComponent<PlayerController>();
-        //    p2 = players[1].GetComponent<PlayerController>();
-        //}
         AS.GetComponent<AudioSource>();
         UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
         Screen.orientation = ScreenOrientation.Portrait;
-
-        //checkScore();
     }
 
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode) {
@@ -152,43 +115,43 @@ public class GameManager : MonoBehaviour {
             else if (scene.buildIndex == 1)
             {
                 canPlaySounds = true;
+                gameOngoing = true;
                 GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
                 p1 = players[0].GetComponent<PlayerController>();
                 p2 = players[1].GetComponent<PlayerController>();
+
+                GameObject[] playerheads = GameObject.FindGameObjectsWithTag("playerHead"); // This has the orders backwards for some reason...
+                p1Mouth = playerheads[1].GetComponent<playerMouth>();
+                p2Mouth = playerheads[0].GetComponent<playerMouth>();
+                p1Mouth.gm = instance;
+                p2Mouth.gm = instance;
+
+                balls = GameObject.FindGameObjectsWithTag("Ball");
+                ballCount = balls.Length;   //This is how we know how many balls are in the scene when the game starts 
+                count = 0;
+
+                p1Score = 0;
+                p2Score = 0;
+            }
+            else if (scene.buildIndex == 2)
+            {
+                background = GameObject.FindGameObjectWithTag("Background");
+                isThisWinScreen();
             }
         }
     }
 
     public void ballEaten(string playerName)
     {
-        Debug.Log("Hey look here a ball was EATEN" +playerName);
         count++;
         if(playerName == "p1")
         {
             p1Score++;
         }
-        else //if(playerName == "p2")
+        else
         {
             p2Score++;   
         }
-    }
-
-    public void checkScore()
-    {
-      //  Debug.Log("If I don't check the score, who will?");
-      //  Debug.Log("The scores are " + p1Mouth.score + "    and   " + p2Mouth.score);
-
-     //   int totalScore = p1Mouth.score + p2Mouth.score;
-
-    //    Debug.Log("The total score is " + totalScore+" while ballcount is "+ballCount);
-
-       // balls = GameObject.FindGameObjectsWithTag("Ball");
-      //  ballCount = balls.Length;
-      //  p1WinnerText.SetActive(true);
-     //   p2WinnerText.SetActive(true);
-
-
-
     }
 
     // Update is called once per frame
@@ -196,24 +159,10 @@ public class GameManager : MonoBehaviour {
 
         if(count >= 25)
         {
-            Debug.Log("Just a check");
+            //Debug.Log("Just a check");
             if(gameOngoing == true)
             {
-                //p1WinnerText.SetActive(true);
-                //p2WinnerText.SetActive(true);
-
-                //int p1Score = p1Mouth.score;  //for some reason accessing this value FREEZES MY PHONE =( 
-                //int p2Score = p2Mouth.score;
-                
-                //if(p1Score > p2Score)
-               // {
-               //     winner = "Player 1";
-               // }
-               // else
-              //  {
-              //      winner = "Player 2";
-              //  }
-                Debug.Log("G A M E  O V E R ");
+                //Debug.Log("G A M E  O V E R ");
                 StartCoroutine(winScreen());
                 gameOngoing = false;
             }

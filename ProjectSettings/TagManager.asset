@@ -8,6 +8,8 @@ TagManager:
   - WallX
   - Ball
   - winText
+  - playerHead
+  - Background
   layers:
   - Default
   - TransparentFX

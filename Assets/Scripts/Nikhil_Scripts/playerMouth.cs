@@ -4,17 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class playerMouth : MonoBehaviour {
-
     //This script will go on HippoHead and will handle the detecting of balls and such things
-
     public bool eatingAllowed;
     public Text scoreText;
     public int score;
     public GameManager gm;
     public string player_name;
-
-
-    
 
     // Use these to play Bite sounds
     public AudioSource AS;
@@ -56,15 +51,8 @@ public class playerMouth : MonoBehaviour {
         {
             gm = FindObjectOfType<GameManager>();
         }
-        //gm = FindObjectOfType<GameManager>();
-        //gm.ballEaten(player_name);
-        //gm.checkScore();
-       
         playing = true;
-
     }
-
-    
 
     public void allowEating()
     {
@@ -80,7 +68,6 @@ public class playerMouth : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Ball")
         {
-            //gm.checkScore();
             //Debug.Log("Ball all up in my face");
             if (eatingAllowed)
             {
@@ -95,32 +82,25 @@ public class playerMouth : MonoBehaviour {
 
     private void Eating(GameObject food)
     {
-        //   Debug.Log("Yum, a snack has been had");
-        
         playBite(R.Next(0, NOfBiteSounds));
         StartCoroutine(ChompEffect());
         food.GetComponent<BallScript>().killYourself(player_name);
         Destroy(food);
         score++;
-        
-        
         scoreText.text = score.ToString();
 
-        
-        //gm.ballEaten(name);
+        gm.ballEaten(player_name);
     }   
 
     public void displayWinner(string winner)
     {
-        Debug.Log(winner + " WINS");
+        //Debug.Log(winner + " WINS");
         playing = false;
         scoreText.text = winner + " WINS";
     }
 
-
     // Update is called once per frame
     void Update () {
-        //gm.ballEaten(name);
 		if(ScalingActive)
         {
             Chomp.transform.localScale = Vector3.Lerp(Chomp.transform.localScale, new Vector3(1,.01f, 1), 0.2f);

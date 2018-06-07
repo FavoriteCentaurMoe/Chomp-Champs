@@ -18,8 +18,6 @@ public class BallScript : MonoBehaviour {
 
     void Start() {
         ballRB = gameObject.GetComponent<Rigidbody>();
-
-        //This just makes the ball have a random rotation.
         int y_Rotation = (int)Random.Range(0f, 360f);
         Quaternion start_Rotation = Quaternion.Euler(0f, y_Rotation, 0f);
         transform.rotation = start_Rotation;
@@ -34,20 +32,5 @@ public class BallScript : MonoBehaviour {
     void FixedUpdate() {
         ballRB.AddForce(ballRB.velocity.normalized * moveSpeed, ForceMode.Impulse);
         ballRB.velocity = Vector3.ClampMagnitude(ballRB.velocity, topSpeed);
-    }
-
-    // Kinda useless now. delete if needed.
-    void OnCollisionEnter(Collision coll) {
-        if (coll.transform.tag == "WallX")
-        {
-
-        }
-        else if (coll.transform.tag == "WallZ")
-        {
-
-        }
-    }
-
-    // Private Functions
-    
+    }    
 }

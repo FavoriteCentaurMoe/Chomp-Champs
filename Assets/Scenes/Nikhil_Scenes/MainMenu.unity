@@ -701,7 +701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1173326426
 RectTransform:
   m_ObjectHideFlags: 0
@@ -798,6 +798,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114588710432697896, guid: de00391d5aef87a4a8664d0af39531a4,
+        type: 2}
+      propertyPath: p1Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 8b9e6a0e8e5bc4f40b28fb19a0ff175d, type: 2}
+    - target: {fileID: 114588710432697896, guid: de00391d5aef87a4a8664d0af39531a4,
+        type: 2}
+      propertyPath: p2Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b035d234e2541d45839e9da017a8117, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de00391d5aef87a4a8664d0af39531a4, type: 2}
   m_IsPrefabParent: 0
@@ -1413,7 +1423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hungry Hippos
+  m_Text: Chomp Champs
 --- !u!222 &1939271268
 CanvasRenderer:
   m_ObjectHideFlags: 0
