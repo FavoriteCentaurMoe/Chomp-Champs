@@ -556,7 +556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Winner Wins
+  m_Text: What, a draw?!
 --- !u!222 &1136306790
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Winner Wins
+  m_Text: What, a draw?!
 --- !u!222 &1341727749
 CanvasRenderer:
   m_ObjectHideFlags: 0

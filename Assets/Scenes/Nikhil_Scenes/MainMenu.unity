@@ -808,6 +808,11 @@ Prefab:
       propertyPath: p2Material
       value: 
       objectReference: {fileID: 2100000, guid: 5b035d234e2541d45839e9da017a8117, type: 2}
+    - target: {fileID: 114588710432697896, guid: de00391d5aef87a4a8664d0af39531a4,
+        type: 2}
+      propertyPath: secondsLeft
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de00391d5aef87a4a8664d0af39531a4, type: 2}
   m_IsPrefabParent: 0

@@ -37,7 +37,11 @@ public class GameManager : MonoBehaviour {
     public Material p1Material;
     public Material p2Material;
 
-    //private Text testText;
+    public int secondsLeft;
+    private int secLeft_Copy;
+    private bool countingDown = false;
+    private Text timeTextBlue;
+    private Text timeTextRed;
 
     void playTap(int SoundNumber)
     {
@@ -60,6 +64,15 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(2);
     }
 
+    private IEnumerator countdown() {
+        countingDown = true;
+        yield return new WaitForSeconds(1f);
+        
+        secondsLeft--;
+        timeTextBlue.text = secondsLeft.ToString();
+        timeTextRed.text = secondsLeft.ToString();
+        countingDown = false;
+    }
 
     public void isThisWinScreen()
     {
@@ -106,6 +119,8 @@ public class GameManager : MonoBehaviour {
         AS.GetComponent<AudioSource>();
         UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
         Screen.orientation = ScreenOrientation.Portrait;
+
+        secLeft_Copy = secondsLeft;
     }
 
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode) {
@@ -120,6 +135,8 @@ public class GameManager : MonoBehaviour {
             }
             else if (scene.buildIndex == 1)
             {
+                secondsLeft = secLeft_Copy;
+                countingDown = false;
                 canPlaySounds = true;
                 gameOngoing = true;
                 GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -139,10 +156,15 @@ public class GameManager : MonoBehaviour {
                 p1Score = 0;
                 p2Score = 0;
 
-                //testText = GameObject.FindGameObjectWithTag("test").GetComponent<Text>();
+                GameObject[] timerTexts = GameObject.FindGameObjectsWithTag("test");
+                timeTextBlue = timerTexts[0].GetComponent<Text>();
+                timeTextRed = timerTexts[1].GetComponent<Text>();
+                timeTextBlue.text = secondsLeft.ToString();
+                timeTextRed.text = secondsLeft.ToString();
             }
             else if (scene.buildIndex == 2)
             {
+                StopAllCoroutines();
                 background = GameObject.FindGameObjectWithTag("Background");
                 isThisWinScreen();
             }
@@ -164,9 +186,6 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        //if (testText != null) {
-        //    testText.text = count.ToString();
-        //}
         if(count >= 25)
         {
             //Debug.Log("Just a check");
@@ -178,6 +197,15 @@ public class GameManager : MonoBehaviour {
             }
 
         }
+
+        if (!countingDown && UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1) {
+            if (secondsLeft == 0)
+            {
+                SceneManager.LoadScene(2); // if there is 0 seconds left, fuckin bail the game and go to the win screen.
+            }
+            StartCoroutine(countdown());
+        }
+
         // Process Touch Inputs.
         for (int i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
@@ -188,10 +216,12 @@ public class GameManager : MonoBehaviour {
             if (Physics.Raycast(ray, out hit)) {
                 Vector3 lookPoint = new Vector3(hit.point.x, 0, hit.point.z);
                 if (hit.point.z < 0) {
-                    p1.processTouch(lookPoint);
+                    if (p1 != null)
+                        p1.processTouch(lookPoint);
                 }
                 else if (hit.point.z > 0) {
-                    p2.processTouch(lookPoint);
+                    if (p2 != null)
+                        p2.processTouch(lookPoint);
                 }
             }
         }
