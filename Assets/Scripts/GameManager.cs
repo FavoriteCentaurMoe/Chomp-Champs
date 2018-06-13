@@ -164,6 +164,7 @@ public class GameManager : MonoBehaviour {
             }
             else if (scene.buildIndex == 2)
             {
+                canPlaySounds = false;
                 StopAllCoroutines();
                 background = GameObject.FindGameObjectWithTag("Background");
                 isThisWinScreen();
@@ -186,6 +187,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
         if(count >= 25)
         {
             //Debug.Log("Just a check");
